@@ -1,15 +1,18 @@
 # JavaScript Interview Partice
 
-###### Web Render Step
+##### Web Render Step
 <p>
-1. HTML ⇒ DOM Tree
+
+**Steps**
+1. HTML => DOM Tree
 2. CSS ⇒ CSSOM Tree
 3. DOM Tree and CSSOM Tree ⇒ Render Tree
 4. Render Tree ⇒ Layout
 5. Paint Browser
+
 </p>
 
-###### URL Content
+##### URL Content
 <p>
 example: http://www.example.com:80/path/to/myPage?key=value1&key2=value2#someDocument
 
@@ -22,7 +25,7 @@ example: http://www.example.com:80/path/to/myPage?key=value1&key2=value2#someDoc
 
 
 **輸入網址到渲染畫面的過程**
-1.  瀏覽器透過作業系統去找IP網址
+1. 瀏覽器透過作業系統去找IP網址
 2. 去DNS(查找伺服器)找相對應的IP Address
 3. 把IP Address丟回Browser
 
