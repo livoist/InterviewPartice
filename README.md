@@ -105,19 +105,19 @@ newBtn2.ob.getThis()
 
 ```javascript
 const count1 = {
-	count: 10,
-	getCount(num) {
-		return this.count + num
-	},
-	getCount2: num => this.count + num
+  count: 10,
+  getCount(num) {
+    return this.count + num
+  },
+  getCount2: num => this.count + num
 }
 
 const count2 = {
-	count: 20,
-	getCount(num) {
-		return this.count + num
-	},
-	getCount2: num => this.count + num
+  count: 20,
+  getCount(num) {
+	return this.count + num
+  },
+  getCount2: num => this.count + num
 }
 ```
 
@@ -135,17 +135,17 @@ console.log('use call to change count1 this to count2', count1.getCount.call(cou
 console.log('use apply to change count2 this to count1', count2.getCount.apply(count1, [60]))
 
 const obj = {
-	a() { console.log(this) },
-	b: () => console.log(this),
-	c() {
-		console.log(this)
-		const c1 = () => console.log(this)
-		c1()
-	},
-	d: () => {
-		console.log(this)
-		const b1 = () => console.log(this)
-	}
+  a() { console.log(this) },
+  b: () => console.log(this),
+  c() {
+	console.log(this)
+	const c1 = () => console.log(this)
+	c1()
+  },
+  d: () => {
+	console.log(this)
+	const b1 = () => console.log(this)
+  }
 }
 ```
 
@@ -161,10 +161,10 @@ const obj = {
 
 ```javascript
 class obj {
-	constructor(name) {
-		this.name = name
-	}
-	a() { console.log(this) }
+  constructor(name) {
+	this.name = name
+  }
+  a() { console.log(this) }
 }
 
 const newOBJ = new obj('Ben')
@@ -175,7 +175,7 @@ newOBJ.a()
 
 ```javascript
 function Test() {
-	this.name = 'Ben'
+  this.name = 'Ben'
 }
 
 const n = new Test()
