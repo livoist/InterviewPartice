@@ -1,6 +1,6 @@
 # JavaScript Interview Partice
 
-##### Web Render Step
+### Web Render Step
 <p>
 
 **Steps**
@@ -12,7 +12,9 @@
 
 </p>
 
-##### URL Content
+---
+
+### URL Content
 <p>
 example: http://www.example.com:80/path/to/myPage?key=value1&key2=value2#someDocument
 
@@ -47,5 +49,7 @@ example: http://www.example.com:80/path/to/myPage?key=value1&key2=value2#someDoc
 3. 網路互連層(Internet): IP Address
 4. 網路存取層(Network Access): 海底電纜
 </p>
+
+---
 
 
