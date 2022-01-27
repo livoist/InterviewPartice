@@ -184,3 +184,73 @@ console.log(n.name)
 
 <p>工廠模式中的this則是自己的上下文</p>
 </p>
+
+---
+
+### Hosting
+<p>如上如果沒有hosting(提升)的話，a就沒有辦法call b function，提升是為了解決函式順序的問題</p>
+
+```javascript
+function a() {
+	console.log('a')
+	b()
+}
+
+console.log('call a function', a())
+
+function b() {
+	console.log('b')
+}
+```
+
+---
+
+### 陳述式(Statement or Declaretion): 陳述一段行為不回傳結果
+
+```javascript
+<p>一宣告就會存在記憶體，同時會hosting提升到最上方</p>
+
+delFunc()
+function delFunc() {}
+```
+
+---
+
+### 表達式(Expression): 行為本身會回傳一個結果
+<p>
+
+  1. 跟statement差別主要在不會在一宣告就儲存在記憶體裡
+  2. 通常是一個計算，會回傳一個值
+  3. 暫時性死區: 必須先宣告才能使用 => 沒有hosting
+  4. 通常跟元件生命週期一起走
+</p>
+
+```javascript
+expFunc()
+const expFunc = (num) => num * num
+```
+
+---
+
+### Front end Q1: 結果為何?
+```javascript
+class apple {
+	static changeColor(newColor) {
+		this.newColor = newColor
+		return this.newColor
+	}
+
+	constructor({ newColor = 'green' } = {}) {
+		this.newColor = newColor
+	}
+}
+
+const newApple = new apple({ newColor: 'red' })
+newApple.changeColor('orange')
+```
+<details><summary><b>答案</b></summary>
+<p>changeColor是一個靜態方法，只能在初始建構式時使用，被能被實例所使用</p>
+</details>
+
+---
+
