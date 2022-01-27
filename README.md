@@ -307,8 +307,8 @@ console.log(person.getFullName())
 ```
 <details><summary><b>A</b></summary>
 <p>
-TypeError，不能替建構函式添加屬性
-hint: 因為並不是每一個子類別都會需要此屬性，所以必須使用Person.prototype.getFullName的方式添加，以免過度浪費空間
+  - TypeError，不能替建構函式添加屬性
+  - hint: 因為並不是每一個子類別都會需要此屬性，所以必須使用Person.prototype.getFullName的方式添加，以免過度浪費空間
 </p>
 </details>
 
