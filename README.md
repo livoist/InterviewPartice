@@ -4,11 +4,11 @@
 <p>
 
 **Steps**
-1. HTML => DOM Tree
-2. CSS ⇒ CSSOM Tree
-3. DOM Tree and CSSOM Tree ⇒ Render Tree
-4. Render Tree ⇒ Layout
-5. Paint Browser
+1. `HTML` => `DOM Tree`
+2. `CSS` ⇒ `CSSOM Tree`
+3. `DOM Tree and CSSOM Tree` ⇒ `Render Tree`
+4. `Render Tree` ⇒ `Layout`
+5. `Paint Browser`
 
 </p>
 
@@ -16,7 +16,7 @@
 
 ### URL Content
 <p>
-example: http://www.example.com:80/path/to/myPage?key=value1&key2=value2#someDocument
+example: `http://www.example.com:80/path/to/myPage?key=value1&key2=value2#someDocument`
 
 1. Protocol: 瀏覽器協議，通常都是HTTP or HTTPS ⇒ http
 2. DomainName: 域名，對哪個Web進行請求，也可以是IP Address ⇒ www.exapmle.com
@@ -185,8 +185,9 @@ const obj = {
 ```javascript
 class obj {
   constructor(name) {
-	this.name = name
+	  this.name = name
   }
+
   a() { console.log(this) }
 }
 
@@ -308,7 +309,7 @@ console.log(person.getFullName())
 <details><summary><b>A</b></summary>
 <p>
 
-TypeError，不能替建構函式添加屬性
+TypeError，不能替建構函式實例添加任何屬性
 
 hint: 因為並不是每一個子類別都會需要此屬性，所以必須使用Person.prototype.getFullName的方式添加，以免過度浪費空間
 </p>
@@ -426,7 +427,7 @@ getAge()
 sessionStorage.setItem('cool_secret', 123)
 ```
 <details><summary><b>A</b></summary>
-<p>當使用者關掉該標籤網頁時，localStorage則是永久存在，除非去清除他</p>
+<p>當使用者關掉該標籤網頁時，而localStorage則是永久存在，除非去清除他</p>
 </details>
 
 ---
@@ -521,7 +522,7 @@ catch為區塊作用予以參數x並賦值為1，y則是直接賦值為2
 ### Front end Q17: 輸出為何?
 ```javascript
 [[0, 1], [2, 3]].reduce((arr, cur) => {
-	return acc.concat(cur)
+	return arr.concat(cur)
 }, [1, 2])
 ```
 <details><summary><b>A</b></summary>
@@ -2161,6 +2162,182 @@ Added a new property! Accessed a property!
 person.name = "Lydia"等於會觸發handler的set
 
 person.name等於會觸發handler的get
+
+</p>
+</details>
+
+---
+
+### Front end Q90: 以下何者沒有副作用?
+```javascript
+const person = {
+  name: 'Ben',
+  address: {
+    street: '100 Main St'
+  }
+}
+
+Object.freeze(person)
+```
+<details><summary><b>A</b></summary>
+<p>
+C => 使用Object.freeze對一個物件進行淺凍結，只凍結那個物件本身不包含物件底下的另一個物件，C為真
+
+A: person.name = 'new Name'
+B: delete person.address
+C: person.address.street = '101 Main St'
+D: person.pet = { name: 'mara' }
+</p>
+</details>
+
+---
+
+### Front end Q91: 輸出為何?
+```javascript
+const add = x => x + x
+
+function myFunc(num = 2, value = add(num)) {
+  console.log(num, value)
+}
+
+myFunc()
+myFunc(3)
+```
+<details><summary><b>A</b></summary>
+<p>
+2、4，3、6
+
+默認參數
+
+第一次myFunc前者參數默認值為2，後者回傳x + x
+第二次myFunc(3)改變前者默認值，也一起影響第二個參數回傳的結果
+
+ex: 其餘參數與默認參數，其餘參數必須是最後一個參數，否則會報錯，默認參數沒有限制，但如果沒有傳遞默認就會是undefined
+</p>
+</details>
+
+---
+
+### Front end Q92: 輸出為何?
+```javascript
+class Counter {
+  #number = 10
+
+  increment() {
+    this.#number++
+  }
+
+  getNum() {
+    return this.#number
+  }
+}
+
+const counter = new Counter()
+counter.increment()
+
+console.log(counter.#number)
+```
+<details><summary><b>A</b></summary>
+<p>
+SyntaxError
+
+ES2020語法，添加私有變數(#number)，無法從外部獲取該值
+</p>
+</details>
+
+---
+
+### Front end Q93: 輸出為何?
+```javascript
+class Bird {
+  constructor() {
+    console.log("I'm a bird. 🦢")
+  }
+}
+
+class Flamingo extends Bird {
+  constructor() {
+    console.log("I'm pink. 🌸")
+    super()
+  }
+}
+
+const pet = new Flamingo()
+```
+<details><summary><b>A</b></summary>
+<p>
+I'm pink. 🌸 I'm a bird. 🦢
+
+創建實體Flamingo，Flamingo的constructor被調用，輸出I'm pink. 🌸，之後再調用super()，super調用父類的建構式，印出I'm a bird. 🦢
+</p>
+</details>
+
+---
+
+### Front end Q94: 輸出為何?
+```javascript
+let count = 0
+const nums = [0, 1, 2, 3]
+nums.forEach(num => {
+  if (num) count += 1
+})
+
+console.log(count)
+```
+<details><summary><b>A</b></summary>
+<p>
+3
+
+nums第一個值為false(0)，故不執行if判斷，所以只執行三次，count為3
+</p>
+</details>
+
+---
+
+### Front end Q95: 輸出為何?
+```javascript
+const user = {
+  email: "e@mail.com",
+  password: "12345"
+}
+
+const updateUser = ({ email, password }) => {
+  if (email) Object.assign(user, { email })
+  if (password) user.password = password
+
+  return user
+}
+
+const updateUser = updateUser({ email: "new@mail.com" })
+console.log(updateUser === user)
+```
+<details><summary><b>A</b></summary>
+<p>
+true
+
+updateUser回傳值為user，updateUser === user = true
+</p>
+</details>
+
+---
+
+### Front end Q96: 輸出為何?
+```javascript
+const fruit = ['🍌', '🍊', '🍎']
+
+fruit.slice(0, 1)
+fruit.splice(0, 1)
+fruit.unshift('🍇')
+```
+<details><summary><b>A</b></summary>
+<p>
+['🍇', '🍊', '🍎']
+
+slice: slice會複製一個新陣列，不會改變原始陣列 = ['🍌']
+
+splice: splice會改變原始陣列，splice(start, deleteCount, item) = ['🍊', '🍎']
+
+unshift: unshift會改變原始陣列，在陣列最前面加入一個新元素 = ['🍇', '🍊', '🍎']
 
 </p>
 </details>
