@@ -189,6 +189,8 @@ const obj = {
 4. `d`: 承b在箭頭函式中的箭頭函式一樣沒有指向 => window
 </p>
 
+
+**Class(建構式)**
 ```javascript
 class obj {
   constructor(name) {
@@ -204,6 +206,7 @@ newOBJ.a()
 ```
 <p>建構式的this會指向自己</p>
 
+**Factory(工廠模式)**
 ```javascript
 function Test() {
   this.name = 'Ben'
