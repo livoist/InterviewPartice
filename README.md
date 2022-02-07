@@ -237,9 +237,9 @@ function b() {
 ---
 
 ### 陳述式(Statement or Declaretion): 陳述一段行為不回傳結果
+<p>一宣告就會存在記憶體，同時會hosting提升到最上方</p>
 
 ```javascript
-<p>一宣告就會存在記憶體，同時會hosting提升到最上方</p>
 
 delFunc()
 function delFunc() {}
@@ -257,7 +257,6 @@ function delFunc() {}
 </p>
 
 ```javascript
-`不能未宣告就先調用，沒有hosting`
 expFunc()
 const expFunc = (num) => num * num
 ```
@@ -284,6 +283,7 @@ newApple.changeColor('orange')
 <p>
 
 `TypeError`
+
 changeColor是一個靜態方法，只能在初始建構式時使用，被能被實例所使用
 
 </p>
