@@ -285,9 +285,7 @@ newApple.changeColor('orange')
 <details><summary><b>A</b></summary>
 <p>
 
-`TypeError`
-
-changeColor是一個靜態方法，只能在初始建構式時使用，被能被實例所使用
+`TypeError`，changeColor是一個靜態方法，只能在初始建構式時使用，被能被實例所使用
 
 </p>
 </details>
@@ -303,7 +301,11 @@ function woo() {
 woo.people = 'Peter'
 ```
 <details><summary><b>A</b></summary>
-<p>正常運作，在JavaScript中除了基本類型之外其他都是對象，函數也只是一個有屬性的對象</p>
+<p>
+
+`正常運作`，在JavaScript中除了基本類型之外其他都是對象，函數也只是一個有屬性的對象
+
+</p>
 </details>
 
 ---
@@ -325,9 +327,10 @@ console.log(person.getFullName())
 <details><summary><b>A</b></summary>
 <p>
 
-TypeError，不能替建構函式實例添加任何屬性
+`TypeError`
 
-hint: 因為並不是每一個子類別都會需要此屬性，所以必須使用Person.prototype.getFullName的方式添加，以免過度浪費空間
+不能替建構函式實例添加任何屬性，因為並不是每一個子類別都會需要此屬性，所以必須使用Person.prototype.getFullName的方式添加，以免過度浪費空間
+
 </p>
 </details>
 
@@ -335,7 +338,11 @@ hint: 因為並不是每一個子類別都會需要此屬性，所以必須使�
 
 ### Front end Q4: 事件的傳播階段?
 <details><summary><b>A</b></summary>
-<p>Capturing(由上往下) => Target(目標) => Bubbling(由下往上)</p>
+<p>
+
+`Capturing(由上往下) => Target(目標) => Bubbling(由下往上)`
+
+</p>
 </details>
 
 ---
@@ -343,7 +350,11 @@ hint: 因為並不是每一個子類別都會需要此屬性，所以必須使�
 ### Front end Q5: JavaScript的所有對象都有原型?
 <p>JavaScript的所有對象都有原型?</p>
 <details><summary><b>A</b></summary>
-<p>除了基本類型之外的對象才有原型</p>
+<p>
+
+`除了基本類型之外的對象才有原型`
+
+</p>
 </details>
 
 ---
@@ -357,7 +368,11 @@ hint: 因為並不是每一個子類別都會需要此屬性，所以必須使�
 5. true + '1' = 'true1'
 ```
 <details><summary><b>A</b></summary>
-<p>'12'、'12'、2、1、'true1'</p>
+<p>
+
+`'12'、'12'、2、1、'true1'`
+
+</p>
 </details>
 
 ---
@@ -372,7 +387,7 @@ console.log(number)
 <details><summary><b>A</b></summary>
 <p>
 
-0、2、2
+`0、2、2`
 
 0 => 後增運算符，下一次才會加上
 
@@ -402,6 +417,8 @@ checkAge({ age: 18 })
 <details><summary><b>A</b></summary>
 <p>
 
+`C`
+
 在測試相等性時，基本類型通過值(value)進行比較，對象則是用引用(reference)進行比較，
 JavaScript會檢查對象的內存位置是否一樣，A、B皆為false，答案為C。
 
@@ -418,7 +435,11 @@ function getArg(...args) {
 getArg()
 ```
 <details><summary><b>A</b></summary>
-<p>object，在JavaScript中所有對象都是物件</p>
+<p>
+
+`object`，在JavaScript中所有對象都是物件
+
+</p>
 </details>
 
 ---
@@ -433,7 +454,11 @@ function getAge() {
 getAge()
 ```
 <details><summary><b>A</b></summary>
-<p>ReferenceError，未宣告對象</p>
+<p>
+
+`ReferenceError`，未宣告對象
+
+</p>
 </details>
 
 ---
@@ -443,7 +468,11 @@ getAge()
 sessionStorage.setItem('cool_secret', 123)
 ```
 <details><summary><b>A</b></summary>
-<p>當使用者關掉該標籤網頁時，而localStorage則是永久存在，除非去清除他</p>
+<p>
+
+`當使用者關掉該標籤網頁時`，而localStorage則是永久存在，除非主動去清除他
+
+</p>
 </details>
 
 ---
@@ -456,9 +485,9 @@ console.log(obj)
 <details><summary><b>A</b></summary>
 <p>
 
-{ a: 'three', b: 'two' }
+`{ a: 'three', b: 'two' }`
 
-hint: 當物件中出現兩個一樣的key，則會以最後一個key的值為內容，key位置則是不變
+當物件中出現兩個一樣的key，則會以最後一個key的值為內容，key位置則是不變
 
 </p>
 </details>
@@ -475,9 +504,7 @@ for (let i = 1; i < 5; i++) {
 <details><summary><b>A</b></summary>
 <p>
 
-1、2、4
-
-hint: continue會跳過該次迭代
+`1、2、4`，continue會跳過該次迭代
 
 </p>
 </details>
@@ -493,9 +520,9 @@ console.log(nums)
 <details><summary><b>A</b></summary>
 <p>
 
-[1, 2, 3, empty x 7, 10]
+`[1, 2, 3, empty x 7, 10]`
 
-hint: 產生7個empty item填補，實際值為undefined，但根據環境也有可能不同
+產生7個empty item填補，實際值為undefined，但根據環境也有可能不同
 
 </p>
 </details>
@@ -519,10 +546,11 @@ hint: 產生7個empty item填補，實際值為undefined，但根據環境也有
 <details><summary><b>A</b></summary>
 <p>
 
-1 undefined 2
+`1、undefined、2`
 
 catch為區塊作用予以參數x並賦值為1，y則是直接賦值為2
 所以在catch之外的x仍然是undefined
+
 </p>
 </details>
 
@@ -544,9 +572,7 @@ catch為區塊作用予以參數x並賦值為1，y則是直接賦值為2
 <details><summary><b>A</b></summary>
 <p>
 
-[1, 2, 0, 1, 2, 3]
-
-hint: 有設定初始值為[1, 2]
+`[1, 2, 0, 1, 2, 3]`，有設定初始值為[1, 2]
 
 </p>
 </details>
@@ -557,7 +583,7 @@ hint: 有設定初始值為[1, 2]
 <details><summary><b>A</b></summary>
 <p>
 
-false false true
+`false、false、true`
 
 null => false => true => false
 
@@ -573,7 +599,9 @@ null => false => true => false
 ### Front end Q19: setInterval返回值是?
 <details><summary><b>A</b></summary>
 <p>
-返回一個ID，可用來clearInterval清除計時器用
+
+`返回一個ID`，可用來clearInterval清除計時器用
+
 </p>
 </details>
 
@@ -590,9 +618,7 @@ console.log(members)
 <details><summary><b>A</b></summary>
 <p>
 
-[{ name: 'Peter' }]
-
-引用並不相同，故修改不會造成影響
+`[{ name: 'Peter' }]`，引用並不相同，故修改不會造成影響
 
 </p>
 </details>
@@ -602,7 +628,9 @@ console.log(members)
 ### Front end Q21: console.log(3 + 4 + '5')
 <details><summary><b>A</b></summary>
 <p>
-加法運算子從左至右故為3 + 4 = 7，7 + '5'，強制型轉為'75'
+
+`75`，加法運算子從左至右故為3 + 4 = 7 => 7 + '5' => 強制型轉為'75'
+
 </p>
 </details>
 
@@ -618,9 +646,9 @@ console.log(members)
 <details><summary><b>A</b></summary>
 <p>
 
-[undefined, undefined, undefined]
+`[undefined, undefined, undefined]`
 
-在if各自檢查時符合條件，而如果沒有返回任何值，則值默認為undefined
+在if檢查時符合條件，而如果沒有返回任何值，則默認返回值為undefined
 
 </p>
 </details>
@@ -644,9 +672,7 @@ console.log(person, birthYear)
 <details><summary><b>A</b></summary>
 <p>
 
-{ name: 'Lydia' }, '1997'
-
-前者傳參考後者傳值，person的name被修改
+`{ name: 'Lydia' }, '1997'`，前者傳參考後者傳值，前者person的name被修改
 
 </p>
 </details>
@@ -666,9 +692,7 @@ console.log(myCar.make)
 <details><summary><b>A</b></summary>
 <p>
 
-'car2'
-
-屬性最後的值會是返回的值
+`'car2'`，屬性最後的值會是返回的值
 
 </p>
 </details>
@@ -687,7 +711,7 @@ console.log(typeof y)
 <details><summary><b>A</b></summary>
 <p>
 
-undefined number
+`undefined、number`
 
 實際上為
 
@@ -721,7 +745,7 @@ pet.bark()
 <details><summary><b>A</b></summary>
 <p>
 
-'Mara', TypeError
+`'Mara', TypeError`
 
 後者調用一個已經不存在的function，TypeError: pet.bark is not is function
 
@@ -738,7 +762,9 @@ console.log('c', c)
 ```
 <details><summary><b>A</b></summary>
 <p>
-3 => 解構賦值
+
+`3` => 解構賦值
+
 </p>
 </details>
 
@@ -754,9 +780,7 @@ console.log(admin)
 <details><summary><b>A</b></summary>
 <p>
 
-{ admin: true, name: 'Ben', age: 32 }
-
-擴展運算子 => 合併兩個物件
+`{ admin: true, name: 'Ben', age: 32 }`，擴展運算子 => 合併兩個物件
 
 </p>
 </details>
@@ -777,7 +801,7 @@ console.log(data);
 <details><summary><b>A</b></summary>
 <p>
 
-"{"level":19, "health":90}"
+`"{"level":19, "health":90}"`
 
 JSON.stringify第二個參數為replacer，可以是函數或陣列，用來控制那些值被轉換成string
 
@@ -802,11 +826,11 @@ console.log(num2);
 <details><summary><b>A</b></summary>
 <p>
 
-10、10
+`10、10`
 
 兩者都是後增運算子
 
-後增運算子(先回傳會累加)
+後增運算子(先回傳後累加)
 
 前增運算子(先累加後回傳)
 
@@ -831,7 +855,7 @@ multiply(value);
 <details><summary><b>A</b></summary>
 <p>
 
-20、20、20、40
+`20、20、20、40`
 
 一開始將value的值解構到x當中為默認參數(不一樣的參考)，沒有傳參數時使用
 
@@ -855,11 +879,11 @@ multiply(value);
 <details><summary><b>A</b></summary>
 <p>
 
-1 2 and undefined 3 and undefined 4
+`1 2` and `undefined 3` and `undefined 4`
 
 沒有提供initVal則是使用第一個值，第一次為1、2
 
-而每次如果沒有回傳當下值則默認回傳undefined
+而每次如果沒有回傳當下值則默認回傳undefined(acc, curVal)
 
 故接下來為undefined 3 and undefined 4(第一個值為當前累加值)
 
@@ -901,7 +925,9 @@ class Labrador extends Dog {
 ```
 <details><summary><b>A</b></summary>
 <p>
-2為正確答案，必須先以super繼承父類參數，在繼承之前不能使用this，否則將會報錯
+
+`2為正確答案`，必須先以super繼承父類參數，在繼承之前不能使用this，否則將會報錯
+
 </p>
 </details>
 
@@ -921,7 +947,7 @@ export const sum = (a, b) => a + b;
 <details><summary><b>A</b></summary>
 <p>
 
-running sum.js, running index.js, 3
+`running sum.js` => `running index.js` => `3`
 
 import是編譯階段就執行，所以在運行sum function之前就會先運行
 
@@ -932,21 +958,14 @@ import是編譯階段就執行，所以在運行sum function之前就會先運�
 
 ### Front end Q35: 輸出為何?
 ```javascript
-// index.js
-console.log('running index.js');
-import { sum } from './sum.js';
-console.log(sum(1, 2));
-
-// sum.js
-console.log('running sum.js');
-export const sum = (a, b) => a + b;
+console.log(Number(2) === Number(2))
+console.log(Boolean(false) === Boolean(false))
+console.log(Symbol('foo') === Symbol('foo'))
 ```
 <details><summary><b>A</b></summary>
 <p>
 
-running sum.js, running index.js, 3
-
-import是編譯階段就執行，所以在運行sum function之前就會先運行
+`true, true, false`，Symbol是唯一的，所以不相等
 
 </p>
 </details>
@@ -955,24 +974,6 @@ import是編譯階段就執行，所以在運行sum function之前就會先運�
 
 ### Front end Q36: 輸出為何?
 ```javascript
-console.log(Number(2) === Number(2))
-console.log(Boolean(false) === Boolean(false))
-console.log(Symbol('foo') === Symbol('foo'))
-```
-<details><summary><b>A</b></summary>
-<p>
-
-true, true, false
-
-Symbol是唯一的，所以不相等
-
-</p>
-</details>
-
----
-
-### Front end Q37: 輸出為何?
-```javascript
 const name = "Lydia Hallie"
 console.log(name.padStart(13))
 console.log(name.padStart(2))
@@ -980,7 +981,7 @@ console.log(name.padStart(2))
 <details><summary><b>A</b></summary>
 <p>
 
-" Lydia Hallie", "Lydia Hallie"
+`" Lydia Hallie", "Lydia Hallie"`
 
 padStart會在String開頭進行填補(包含填充)
 
@@ -993,19 +994,21 @@ padStart會在String開頭進行填補(包含填充)
 
 ---
 
-### Front end Q38: 輸出為何?
+### Front end Q37: 輸出為何?
 ```javascript
 console.log("🥑" + "💻");
 ```
 <details><summary><b>A</b></summary>
 <p>
-"🥑💻" => 字串相加
+
+`"🥑💻"` => 字串相加
+
 </p>
 </details>
 
 ---
 
-### Front end Q39: 輸出為何?
+### Front end Q38: 輸出為何?
 ```javascript
 async function getData() {
   return await Promise.resolve("I made it!");
@@ -1017,7 +1020,9 @@ console.log(data)
 <details><summary><b>A</b></summary>
 <p>
 
-Promise {<pending>}，異步函式始終返回一個promise，await仍然須等待promise解決，想訪問已解決的值就必須加上.then
+`Promise {<pending>}`
+
+異步函式始終返回一個promise，await仍然須等待promise解決，想訪問已解決的值就必須加上.then
 
 data.then(res => console.log(res))
 
@@ -1026,7 +1031,7 @@ data.then(res => console.log(res))
 
 ---
 
-### Front end Q40: 輸出為何?
+### Front end Q39: 輸出為何?
 ```javascript
 function addToList(item, list) {
   return list.push(item);
@@ -1037,13 +1042,15 @@ console.log(result);
 ```
 <details><summary><b>A</b></summary>
 <p>
-2，特別注意這邊push是return陣列長度，而不是陣列本身，所以將新對象push進陣列後的長度為2
+
+`2`，特別注意這邊push是return陣列長度，而不是陣列本身，所以將新對象push進陣列後的長度為2
+
 </p>
 </details>
 
 ---
 
-### Front end Q41: 輸出為何?
+### Front end Q40: 輸出為何?
 ```javascript
 const box = { x: 10, y: 20 };
 
@@ -1056,16 +1063,14 @@ console.log(shape)
 <details><summary><b>A</b></summary>
 <p>
 
-TypeError，{ x: 10, y: 20 }
-
-不能對凍結對象進行新增、刪除、修改動作
+`TypeError`，不能對凍結對象進行新增、刪除、修改動作
 
 </p>
 </details>
 
 ---
 
-### Front end Q42: 輸出為何?
+### Front end Q41: 輸出為何?
 ```javascript
 const { name: myName } = { name: "Lydia" };
 
@@ -1074,16 +1079,17 @@ console.log(name);
 <details><summary><b>A</b></summary>
 <p>
 
-ReferenceError，name is not defined
+`ReferenceError`，name is not defined
 
 使用解構賦值將右邊的"Lydia"賦值給左邊的myName變數
 但並未宣告myName這個變數
+
 </p>
 </details>
 
 ---
 
-### Front end Q43: 以下是pure function?
+### Front end Q42: 以下是pure function?
 ```javascript
 function sum(a, b) {
   return a + b;
@@ -1091,13 +1097,17 @@ function sum(a, b) {
 ```
 <details><summary><b>A</b></summary>
 <p>
+
+`是`
+
 pure function在輸入值時(a、b)，需產生相同的輸出(a、b)，如果有調用其他外部並非由參數傳入的參數就不是
+
 </p>
 </details>
 
 ---
 
-### Front end Q44: 輸出為何?
+### Front end Q43: 輸出為何?
 ```javascript
 const add = () => {
   const cache = {};
@@ -1120,16 +1130,17 @@ console.log(addFunction(5 * 2));
 <details><summary><b>A</b></summary>
 <p>
 
-Calculated! 20 From cache! 20 From cache! 20
+`Calculated! 20`、`From cache! 20`、`From cache! 20`
 
-在return的function中依賴於外面的cache，所以會被緩存不會被釋放
+在return的function中依賴於外面的cache，所以會被緩存不會被釋放，
 因此只有在執行第一次的時候是empty object，第二與第三次則都是已緩存在其中
+
 </p>
 </details>
 
 ---
 
-### Front end Q45: 輸出為何?
+### Front end Q44: 輸出為何?
 ```javascript
 const myLifeSummedUp = ["☕", "💻", "🍷", "🍫"]
 
@@ -1144,7 +1155,7 @@ for (let item of myLifeSummedUp) {
 <details><summary><b>A</b></summary>
 <p>
 
-0 1 2 3 and "☕" "💻" "🍷" "🍫"
+`0、1、2、3` and `"☕"、"💻"、"🍷"、"🍫"`
 
 for in => 可遍歷一個對象可枚舉的屬性，陣列可枚舉屬性為key故為index: 0 1 2 3
 
@@ -1155,7 +1166,7 @@ for of => 迭代可迭代對象(Array、Map、Set、String、arguments)，故為
 
 ---
 
-### Front end Q46: 輸出為何?
+### Front end Q45: 輸出為何?
 ```javascript
 const list = [1 + 2, 1 * 2, 1 / 2]
 console.log(list)
@@ -1163,7 +1174,7 @@ console.log(list)
 <details><summary><b>A</b></summary>
 <p>
 
-3，2，0.5
+`3`，`2`，`0.5`
 
 陣列中可包含任何值(number、string、boolean、object、array、null、undefined)以及任何表達式(日期、函數、計算)
 
@@ -1172,7 +1183,7 @@ console.log(list)
 
 ---
 
-### Front end Q47: 輸出為何?
+### Front end Q46: 輸出為何?
 ```javascript
 function sayHi(name) {
   return `Hi there, ${name}`
@@ -1183,16 +1194,14 @@ console.log(sayHi())
 <details><summary><b>A</b></summary>
 <p>
 
-Hi there, undefined
-
-在沒有給參數傳值時，預設值都式undefined
+`Hi there, undefined`，在沒有給參數傳值時，預設值都式undefined
 
 </p>
 </details>
 
 ---
 
-### Front end Q48: 輸出為何?
+### Front end Q47: 輸出為何?
 ```javascript
 var status = "😎"
 
@@ -1213,7 +1222,7 @@ setTimeout(() => {
 <details><summary><b>A</b></summary>
 <p>
 
-"🥑" and "😎"
+`"🥑" and "😎"`
 
 data.getStatus() => data調用getStatus，this指向data = 🥑
 
@@ -1224,7 +1233,7 @@ data.getStatus.call(this) => 使用call重新指定this為全局this = 😎
 
 ---
 
-### Front end Q49: 輸出為何?
+### Front end Q48: 輸出為何?
 ```javascript
 const person = {
   name: "Lydia",
@@ -1239,16 +1248,17 @@ console.log(person)
 <details><summary><b>A</b></summary>
 <p>
 
-{ name: "Lydia", age: 21 }
+`{ name: "Lydia", age: 21 }`
 
-這邊特別注意並沒有引用person這個object，只是宣告一個city並給予person上一個不存在的key
+這邊特別注意並沒有引用person這個object，只是宣告一個city並給予person上一個不存在的key，
 所以並不會影響person object本身
+
 </p>
 </details>
 
 ---
 
-### Front end Q50: 輸出為何?
+### Front end Q49: 輸出為何?
 ```javascript
 function checkAge(age) {
   if (age < 18) {
@@ -1264,13 +1274,15 @@ console.log(checkAge(21))
 ```
 <details><summary><b>A</b></summary>
 <p>
-ReferenceError，if判斷式之外並沒有message這個變數，變數message只存在區塊作用域中
+
+`ReferenceError`，if判斷式之外並沒有message這個變數，變數message只存在區塊作用域中
+
 </p>
 </details>
 
 ---
 
-### Front end Q51: 輸出為何?
+### Front end Q50: 如何將hasName設為true但不能將true當作參數?
 ```javascript
 function getName(name) {
   const hasName = //
@@ -1278,13 +1290,15 @@ function getName(name) {
 ```
 <details><summary><b>A</b></summary>
 <p>
-!!name，邏輯非運算符，如果name存在則!name回傳false，而再使用一次運算符確認為真!!name回傳true
+
+`!!name`，邏輯非運算符，如果name存在則!name回傳false，而再使用一次運算符確認為真!!name回傳true
+
 </p>
 </details>
 
 ---
 
-### Front end Q52: 輸出為何?
+### Front end Q51: 輸出為何?
 ```javascript
 // module.js 
 export default () => "Hello world"
@@ -1298,16 +1312,14 @@ console.log(data)
 <details><summary><b>A</b></summary>
 <p>
 
-{ default: function default(), name: "Lydia" }
-
-導入所有關鍵字*，並賦名為data
+`{ default: function default(), name: "Lydia" }`，導入所有關鍵字*，並賦名為data
 
 </p>
 </details>
 
 ---
 
-### Front end Q53: 輸出為何?
+### Front end Q52: 輸出為何?
 ```javascript
 class Person {
   constructor(name) {
@@ -1321,9 +1333,7 @@ console.log(typeof member)
 <details><summary><b>A</b></summary>
 <p>
 
-object
-
-class是構造函數的語法糖，用構造函數寫則是
+`object`，class是構造函數的語法糖，用構造函數寫則是
 
 function Person() {
   this.name = name
@@ -1334,7 +1344,7 @@ function Person() {
 
 ---
 
-### Front end Q54: 輸出為何?
+### Front end Q53: 輸出為何?
 ```javascript
 let newList = [1, 2, 3].push(4)
 
@@ -1342,13 +1352,15 @@ console.log(newList.push(5))
 ```
 <details><summary><b>A</b></summary>
 <p>
-Error，.push(4)回傳的length，故報錯
+
+`Error`，.push(4)回傳的length，故報錯
+
 </p>
 </details>
 
 ---
 
-### Front end Q55: 輸出為何?
+### Front end Q54: 輸出為何?
 ```javascript
 function giveLydiaPizza() {
   return "Here is pizza!"
@@ -1362,7 +1374,7 @@ console.log(giveLydiaChocolate.prototype)
 <details><summary><b>A</b></summary>
 <p>
 
-{ constructor: ...} undefined
+`{ constructor: ...}、undefined`
 
 giveLydiaPizza => 常規函數有prototype屬性，是個有帶constructor的對象
 
@@ -1373,7 +1385,7 @@ giveLydiaChocolate => 箭頭函數沒有prototype屬性，回傳undefined
 
 ---
 
-### Front end Q56: 輸出為何?
+### Front end Q55: 輸出為何?
 ```javascript
 const person = {
   name: "Lydia",
@@ -1387,53 +1399,40 @@ for (const [x, y] of Object.entries(person)) {
 <details><summary><b>A</b></summary>
 <p>
 
-["name", "Lydia"] and ["age", 21]
+`["name", "Lydia"]` and `["age", 21]`
 
 Object.entries方法可枚舉一個對象身上可枚舉的key and value
+
 然後再應用for of loop迭代所有對象
+
 再使用[x, y]方式解構出兩個對象
+
+</p>
+</details>
+
+---
+
+### Front end Q56: 輸出為何?
+```javascript
+function getItems(fruitList, ...args, favoriteFruit) {
+  return [...fruitList, ...args, favoriteFruit]
+}
+
+getItems(["banana", "apple"], "pear", "orange")
+```
+<details><summary><b>A</b></summary>
+<p>
+
+`SyntaxError`
+
+剩餘參數包含剩下的所有參數，只能做為最後一個參數傳入，上設置為第二個，故報錯誤
+
 </p>
 </details>
 
 ---
 
 ### Front end Q57: 輸出為何?
-```javascript
-function getItems(fruitList, ...args, favoriteFruit) {
-  return [...fruitList, ...args, favoriteFruit]
-}
-
-getItems(["banana", "apple"], "pear", "orange")
-```
-<details><summary><b>A</b></summary>
-<p>
-SyntaxError，剩餘參數包含剩下的所有參數請只能做為最後一個參數傳入，上設置為第二個，故報錯誤
-</p>
-</details>
-
----
-
-### Front end Q58: 輸出為何?
-```javascript
-function getItems(fruitList, ...args, favoriteFruit) {
-  return [...fruitList, ...args, favoriteFruit]
-}
-
-getItems(["banana", "apple"], "pear", "orange")
-```
-<details><summary><b>A</b></summary>
-<p>
-
-SyntaxError，剩餘參數包含剩下的所有參數請只能做為最後一個參數傳入，上設置為第二個，故報錯誤
-
-如果將傳入參數位置對調則能得到正確結果 => [ 'banana', 'apple', 'orange', 'pear' ]
-
-</p>
-</details>
-
----
-
-### Front end Q59: 輸出為何?
 ```javascript
 function nums(a, b) {
   if
@@ -1451,7 +1450,7 @@ console.log(nums(1, 2))
 <details><summary><b>A</b></summary>
 <p>
 
-a is bigger, undefined and b is bigger, undefined
+`a is bigger`, `undefined and b is bigger`, `undefined`
 
 在return後的a + b並不會執行，return沒有預設值，故為undefined
 
@@ -1460,7 +1459,7 @@ a is bigger, undefined and b is bigger, undefined
 
 ---
 
-### Front end Q60: 輸出為何?
+### Front end Q58: 輸出為何?
 ```javascript
 const info = {
   [Symbol('a')]: 'b'
@@ -1472,10 +1471,9 @@ console.log(Object.keys(info))
 <details><summary><b>A</b></summary>
 <p>
 
-{Symbol('a'): 'b'} and []
+`{Symbol('a'): 'b'}` and `[]`
 
-Symbol是不可枚舉、不可見的，故Object.keys()會返回一個空陣列，因為沒有可以枚舉的key
-
+Symbol是不可枚舉、不可見的，故Object.keys()會返回一個空陣列，因為沒有可以枚舉的key，
 如果要訪問Symbol對象的屬性時可使用Object.getOwnPropertySymbols()
 
 </p>
@@ -1483,7 +1481,7 @@ Symbol是不可枚舉、不可見的，故Object.keys()會返回一個空陣列�
 
 ---
 
-### Front end Q61: 輸出為何?
+### Front end Q59: 輸出為何?
 ```javascript
 const getList = ([x, ...y]) => [x, y]
 const getUser = user => { name: user.name, age: user.age }
@@ -1497,11 +1495,11 @@ console.log(getUser(user))
 <details><summary><b>A</b></summary>
 <p>
 
-[1, [2, 3, 4]] and SyntaxError
+`[1, [2, 3, 4]]` and `SyntaxError`
 
 getList(list) => [x, ...y] = [1, 2, 3, 4]，但傳入後對y參數來說就會是一個陣列[2, 3, 4]
 
-getUser(user) => 箭頭函數只返回一個值不用想括號，但如果要返回一個對象加上一個圓括號
+getUser(user) => 箭頭函數只返回一個值不用加括號，但如果要返回一個對象就必須加上一個圓括號
 
 ex: const getUser = user => ({ name: user.name, age: user.age })
 
@@ -1510,7 +1508,7 @@ ex: const getUser = user => ({ name: user.name, age: user.age })
 
 ---
 
-### Front end Q62: 輸出為何?
+### Front end Q60: 輸出為何?
 ```javascript
 const name = "Lydia"
 
@@ -1518,13 +1516,15 @@ console.log(name())
 ```
 <details><summary><b>A</b></summary>
 <p>
-TypeError，name is not a function
+
+`TypeError`，name is not a function
+
 </p>
 </details>
 
 ---
 
-### Front end Q63: 輸出為何?
+### Front end Q61: 輸出為何?
 ```javascript
 const output = `${[] && 'Im'}possible!
 You should${'' && `n't`} see a therapist after so much JavaScript lol`
@@ -1532,7 +1532,7 @@ You should${'' && `n't`} see a therapist after so much JavaScript lol`
 <details><summary><b>A</b></summary>
 <p>
 
-Impossible! You should see a therapist after so much JavaScript lol
+`Impossible! You should see a therapist after so much JavaScript lol`
 
 邏輯與運算子: 滿足所有條件並回傳最後一個真值
 
@@ -1545,7 +1545,7 @@ Impossible! You should see a therapist after so much JavaScript lol
 
 ---
 
-### Front end Q64: 輸出為何?
+### Front end Q62: 輸出為何?
 ```javascript
 const one = (false || {} || null)
 const two = (null || false || "")
@@ -1555,6 +1555,8 @@ console.log(one, two, three)
 ```
 <details><summary><b>A</b></summary>
 <p>
+
+`{}、""、[]`
 
 邏輯或運算子: 滿足其中條件，並回傳第一個真值，若所有條件為偽值則回傳最後一個值
 
@@ -1587,7 +1589,7 @@ array => true
 
 ---
 
-### Front end Q65: 輸出為何?
+### Front end Q63: 輸出為何?
 ```javascript
 const myPromise = () => Promise.resolve('I have resolved!')
 
@@ -1607,7 +1609,7 @@ secondFunction()
 <details><summary><b>A</b></summary>
 <p>
 
-second, I have resolved! and I have resolved!, second
+`second`, `I have resolved!`, `and I have resolved!`, `second`
 
 兩者運作方式不同
 
@@ -1620,7 +1622,7 @@ secondFunction => 透過await關鍵字將會等myPromise reslove才執行second
 
 ---
 
-### Front end Q66: 輸出為何?
+### Front end Q64: 輸出為何?
 ```javascript
 const set = new Set()
 
@@ -1635,7 +1637,7 @@ for (let item of set) {
 <details><summary><b>A</b></summary>
 <p>
 
-3, "Lydia2", "[Object object]2"
+`3`, `"Lydia2"`, `"[Object object]2"`
 
 +運算符不僅能用來相加數值也能用來連接字串
 
@@ -1650,23 +1652,21 @@ set.add({ name: "Lydia" }) => 兩者都不是字串，將兩者都字串化並�
 
 ---
 
-### Front end Q67: 輸出為何?
+### Front end Q65: 輸出為何?
 ```javascript
 Promise.resolve(5)
 ```
 <details><summary><b>A</b></summary>
 <p>
 
-Promise {<fulfilled>: 5}
-
-回傳一個已解決的task = 5
+`Promise {<fulfilled>: 5}`，回傳一個已解決的task = 5
 
 </p>
 </details>
 
 ---
 
-### Front end Q68: 輸出為何?
+### Front end Q66: 輸出為何?
 ```javascript
 function compareMembers(person1, person2 = person) {
   if (person1 !== person2) {
@@ -1683,16 +1683,14 @@ compareMembers(person)
 <details><summary><b>A</b></summary>
 <p>
 
-They are the same!
-
-引用相同(by reference)
+`They are the same!`，引用相同(by reference)
 
 </p>
 </details>
 
 ---
 
-### Front end Q69: 輸出為何?
+### Front end Q67: 輸出為何?
 ```javascript
 const colorConfig = {
   red: true,
@@ -1709,16 +1707,14 @@ console.log(colorConfig.colors[1])
 <details><summary><b>A</b></summary>
 <p>
 
-TypeError
-
-未定義對象無法訪問
+`TypeError`，未定義對象無法訪問
 
 </p>
 </details>
 
 ---
 
-### Front end Q70: 那些陣列被修改了?
+### Front end Q68: 那些陣列被修改了?
 ```javascript
 const emojis = ['✨', '🥑', '😍']
 
@@ -1732,17 +1728,20 @@ emojis.splice(1, 2, '✨')
 <details><summary><b>A</b></summary>
 <p>
 
-splice
+`splice`
 
-map、filter、slice會return一個新陣列，
-find return一個屬性，
+map、filter、slice會return一個新陣列
+
+find return一個屬性
+
 reduce return一個縮減後的值
+
 </p>
 </details>
 
 ---
 
-### Front end Q71: 輸出為何?
+### Front end Q69: 輸出為何?
 ```javascript
 const food = ['🍕', '🍫', '🥑', '🍔']
 const info = { favoriteFood: food[0] }
@@ -1754,7 +1753,7 @@ console.log(food)
 <details><summary><b>A</b></summary>
 <p>
 
-['🍕', '🍫', '🥑', '🍔']
+`['🍕', '🍫', '🥑', '🍔']`
 
 將info object的key賦值(by value)，沒有更改到原來的陣列
 
@@ -1763,7 +1762,7 @@ console.log(food)
 
 ---
 
-### Front end Q72: JSON.stringify and JSON.parse
+### Front end Q70: JSON.stringify and JSON.parse
 
 <details><summary><b>A</b></summary>
 <p>
@@ -1771,13 +1770,13 @@ JSON.stringify([1, 2, 3]) => "[1, 2, 3]"
 JSON.parse("[1, 2, 3]") => [1, 2, 3]
 
 JSON.stringify({ name: '123' }) => "'{ "name": "123" }'
-JSON.parse("'{ "name": "123" }') => { name: '123' }
+JSON.parse("'{ "name": "123" }') => { name: "123" }
 </p>
 </details>
 
 ---
 
-### Front end Q73: 輸出為何?
+### Front end Q71: 輸出為何?
 ```javascript
 let name = 'Lydia'
 
@@ -1790,20 +1789,21 @@ getName()
 ```
 <details><summary><b>A</b></summary>
 <p>
-ReferenceError，暫時性死區、區塊作用域
+
+`ReferenceError`，暫時性死區、區塊作用域
 </p>
 </details>
 
 ---
 
-### Front end Q74: 輸出為何?
+### Front end Q72: 輸出為何?
 ```javascript
 console.log(`${(x => x)('I love')} to program`)
 ```
 <details><summary><b>A</b></summary>
 <p>
 
-I love to program
+`I love to program`
 
 IFEE(立即執行函式)
 
@@ -1814,7 +1814,7 @@ IFEE(立即執行函式)
 
 ---
 
-### Front end Q75: 輸出為何?
+### Front end Q73: 輸出為何?
 ```javascript
 let config = {
   alert: setInterval(() => {
@@ -1827,7 +1827,7 @@ config = null
 <details><summary><b>A</b></summary>
 <p>
 
-setInterval 的回调会被每秒钟调用
+`setInterval 的回调会被每秒钟调用`
 
 箭頭函數會被綁定在context之中也就是config object，所以不會被回收會一直執行
 
@@ -1836,7 +1836,7 @@ setInterval 的回调会被每秒钟调用
 
 ---
 
-### Front end Q76: 輸出為何?
+### Front end Q74: 輸出為何?
 ```javascript
 const person = {
   name: "Lydia",
@@ -1857,7 +1857,7 @@ console.log(person)
 <details><summary><b>A</b></summary>
 <p>
 
-{name: "Lydia", age: 22}
+`{ name: "Lydia", age: 22 }`
 
 changeAge(person) => 傳入對象並更改(by reference)
 
@@ -1868,7 +1868,7 @@ changeAgeAndName() => 解構對象，參考值不同不會被更改
 
 ---
 
-### Front end Q77: 輸出為何?
+### Front end Q75: 輸出為何?
 ```javascript
 let num = 1;
 const list = ["🥳", "🤠", "🥰", "🤪"];
@@ -1877,14 +1877,15 @@ console.log(list[(num += 1)]);
 ```
 <details><summary><b>A</b></summary>
 <p>
-🥰
-陣列裡對象可為計算式
+
+`🥰`，陣列裡對象可為計算式
+
 </p>
 </details>
 
 ---
 
-### Front end Q78: 輸出為何?
+### Front end Q76: 輸出為何?
 ```javascript
 const groceries = ["banana", "apple", "peanuts"];
 
@@ -1897,7 +1898,7 @@ if (groceries.indexOf("banana")) {
 <details><summary><b>A</b></summary>
 <p>
 
-We don't have to buy bananas
+`We don't have to buy bananas`
 
 groceries.indexOf("banana") = 0 = false
 
@@ -1906,7 +1907,7 @@ groceries.indexOf("banana") = 0 = false
 
 ---
 
-### Front end Q79: 輸出為何?
+### Front end Q77: 輸出為何?
 ```javascript
 const name = "Lydia Hallie";
 
@@ -1916,16 +1917,20 @@ console.log(!typeof name === "string");
 <details><summary><b>A</b></summary>
 <p>
 
-false false
+`false`、`false`
 
-typeof string = true，!true = false，false === "object" = false
+typeof string = true
+
+!true = false
+
+false === "object" = false
 
 </p>
 </details>
 
 ---
 
-### Front end Q80: 輸出為何?
+### Front end Q78: 輸出為何?
 ```javascript
 const add = x => y => z => {
 	console.log(x, y, z);
@@ -1937,16 +1942,14 @@ add(4)(5)(6);
 <details><summary><b>A</b></summary>
 <p>
 
-4 5 6
-
-返回箭頭函數的箭頭函數，每個都有獨立的作用域
+`4`、`5`、`6`，返回箭頭函數的箭頭函數，每個都有獨立的作用域
 
 </p>
 </details>
 
 ---
 
-### Front end Q81: 輸出為何?
+### Front end Q79: 輸出為何?
 ```javascript
 const myFunc = ({ x, y, z }) => {
 	console.log(x, y, z);
@@ -1957,7 +1960,7 @@ myFunc(1, 2, 3);
 <details><summary><b>A</b></summary>
 <p>
 
-undefined undefined undefined
+`undefined`、`undefined`、`undefined`
 
 期望會收到一個帶有三個屬性的object，但卻沒有收到，故都回傳默認值undefined
 
@@ -1966,7 +1969,7 @@ undefined undefined undefined
 
 ---
 
-### Front end Q82: 輸出為何?
+### Front end Q80: 輸出為何?
 ```javascript
 const spookyItems = ["👻", "🎃", "🕸"];
 ({ item: spookyItems[3] } = { item: "💀" });
@@ -1976,18 +1979,16 @@ console.log(spookyItems);
 <details><summary><b>A</b></summary>
 <p>
 
-["👻", "🎃", "🕸", "💀"]
+`["👻", "🎃", "🕸", "💀"]`
 
-解構賦值
-
-將右邊的key值賦值給左邊一樣key值的人(spookyItems[3])
+解構賦值，將右邊的key值賦值給左邊一樣key值的人(spookyItems[3])
 
 </p>
 </details>
 
 ---
 
-### Front end Q83: 輸出為何?
+### Front end Q81: 輸出為何?
 ```javascript
 const name = "Lydia Hallie";
 const age = 21;
@@ -2001,7 +2002,7 @@ console.log(isNaN(age));
 <details><summary><b>A</b></summary>
 <p>
 
-false false true false
+`false`、`false`、`true`、`false`
 
 方法Number.isNaN(Not-A-Number)可檢查一個值是否為數字並且等於NaN
 
@@ -2018,7 +2019,7 @@ isNaN(age) => 他是一個數字 = false
 
 ---
 
-### Front end Q84: 輸出為何?
+### Front end Q82: 輸出為何?
 ```javascript
 const randomValue = 21;
 
@@ -2031,13 +2032,15 @@ getInfo();
 ```
 <details><summary><b>A</b></summary>
 <p>
-ReferenceError，暫時性死區，如果宣告同樣名稱變數在不同作用域時，會以當下作用域為主，故產生TDZ(temp dead zone)
+
+`ReferenceError`，暫時性死區，如果宣告同樣名稱變數在不同作用域時，會以當下作用域為主，故產生TDZ(temp dead zone)
+
 </p>
 </details>
 
 ---
 
-### Front end Q85: 輸出為何?
+### Front end Q83: 輸出為何?
 ```javascript
 const myPromise = Promise.resolve("Woah some cool data");
 
@@ -2054,7 +2057,7 @@ const myPromise = Promise.resolve("Woah some cool data");
 <details><summary><b>A</b></summary>
 <p>
 
-Woah some cool data Oh finally!
+`Woah some cool data Oh finally!`
 
 首先try區塊會先執行Woah some cool data，而沒有錯誤不會catch，而finally總是執行Oh finally!
 
@@ -2063,7 +2066,7 @@ Woah some cool data Oh finally!
 
 ---
 
-### Front end Q86: 輸出為何?
+### Front end Q84: 輸出為何?
 ```javascript
 const emojis = ["🥑", ["✨", "✨", ["🍕", "🍕"]]];
 
@@ -2072,16 +2075,14 @@ console.log(emojis.flat(1));
 <details><summary><b>A</b></summary>
 <p>
 
-['🥑', '✨', '✨', ['🍕', '🍕']]
-
-flat(1)方法攤平一層陣列
+`['🥑', '✨', '✨', ['🍕', '🍕']]`，flat(1)方法攤平一層陣列
 
 </p>
 </details>
 
 ---
 
-### Front end Q87: 輸出為何?
+### Front end Q85: 輸出為何?
 ```javascript
 class Counter {
 	constructor() {
@@ -2104,16 +2105,18 @@ console.log(counterOne.count);
 ```
 <details><summary><b>A</b></summary>
 <p>
-3
+
+`3`
 
 前者創建實例，並且執行兩次increment後count為2，
 後者宣告新變數counterTwo且引用counterOne，故會影響最先的引用counterOne(class為物件也是傳參考)
+
 </p>
 </details>
 
 ---
 
-### Front end Q88: 輸出為何?
+### Front end Q86: 輸出為何?
 ```javascript
 const myPromise = Promise.resolve(Promise.resolve("C"));
 
@@ -2135,9 +2138,10 @@ funcTwo();
 ```
 <details><summary><b>A</b></summary>
 <p>
-Last line! Promise! Promise! Last line! Timeout! Timeout!
 
-1. 首先執行funcOne，myPromise和setTimeout都是非同步會被放到任務佇列，先執行A
+`A C C B AT BT`
+
+1. 首先執行funcOne，myPromise和setTimeout都是非同步會被放到任務佇列，先執行console.log("A")
 
 2. funcOne任務結束myPromise已經resolve執行C
 
@@ -2149,8 +2153,6 @@ Last line! Promise! Promise! Last line! Timeout! Timeout!
 
 6. 最後執行兩個setTimeout，先AT再BT(任務佇列順序優先)
 
-result: A C C B AT BT
-
 當任務佇列碰到promise和setTimeout時，promise優先度較高
 
 </p>
@@ -2158,7 +2160,7 @@ result: A C C B AT BT
 
 ---
 
-### Front end Q89: 輸出為何?
+### Front end Q87: 輸出為何?
 ```javascript
 const handler = {
 	set: () => console.log("Added a new property!"),
@@ -2173,18 +2175,18 @@ person.name;
 <details><summary><b>A</b></summary>
 <p>
 
-Added a new property! Accessed a property!
+`Added a new property!`、`Accessed a property!`
+
+前者觸發set後者觸發get
 
 person.name = "Lydia"等於會觸發handler的set
-
-person.name等於會觸發handler的get
 
 </p>
 </details>
 
 ---
 
-### Front end Q90: 以下何者沒有副作用?
+### Front end Q88: 以下何者沒有副作用?
 ```javascript
 const person = {
   name: 'Ben',
@@ -2197,18 +2199,23 @@ Object.freeze(person)
 ```
 <details><summary><b>A</b></summary>
 <p>
-C => 使用Object.freeze對一個物件進行淺凍結，只凍結那個物件本身不包含物件底下的另一個物件，C為真
 
 A: person.name = 'new Name'
+
 B: delete person.address
+
 C: person.address.street = '101 Main St'
+
 D: person.pet = { name: 'mara' }
+
+`C` => 使用Object.freeze對一個物件進行淺凍結，只凍結那個物件本身不包含物件底下的另一個物件，C為真
+
 </p>
 </details>
 
 ---
 
-### Front end Q91: 輸出為何?
+### Front end Q89: 輸出為何?
 ```javascript
 const add = x => x + x
 
@@ -2221,20 +2228,23 @@ myFunc(3)
 ```
 <details><summary><b>A</b></summary>
 <p>
-2、4，3、6
+
+`2、4，3、6`
 
 默認參數
 
 第一次myFunc前者參數默認值為2，後者回傳x + x
+
 第二次myFunc(3)改變前者默認值，也一起影響第二個參數回傳的結果
 
 ex: 其餘參數與默認參數，其餘參數必須是最後一個參數，否則會報錯，默認參數沒有限制，但如果沒有傳遞默認就會是undefined
+
 </p>
 </details>
 
 ---
 
-### Front end Q92: 輸出為何?
+### Front end Q90: 輸出為何?
 ```javascript
 class Counter {
   #number = 10
@@ -2255,15 +2265,15 @@ console.log(counter.#number)
 ```
 <details><summary><b>A</b></summary>
 <p>
-SyntaxError
 
-ES2020語法，添加私有變數(#number)，無法從外部獲取該值
+`SyntaxError`，ES2020語法，添加私有變數(#number)，無法從外部獲取該值
+
 </p>
 </details>
 
 ---
 
-### Front end Q93: 輸出為何?
+### Front end Q91: 輸出為何?
 ```javascript
 class Bird {
   constructor() {
@@ -2282,15 +2292,17 @@ const pet = new Flamingo()
 ```
 <details><summary><b>A</b></summary>
 <p>
-I'm pink. 🌸 I'm a bird. 🦢
+
+`I'm pink. 🌸 I'm a bird. 🦢`
 
 創建實體Flamingo，Flamingo的constructor被調用，輸出I'm pink. 🌸，之後再調用super()，super調用父類的建構式，印出I'm a bird. 🦢
+
 </p>
 </details>
 
 ---
 
-### Front end Q94: 輸出為何?
+### Front end Q92: 輸出為何?
 ```javascript
 let count = 0
 const nums = [0, 1, 2, 3]
@@ -2302,15 +2314,15 @@ console.log(count)
 ```
 <details><summary><b>A</b></summary>
 <p>
-3
 
-nums第一個值為false(0)，故不執行if判斷，所以只執行三次，count為3
+`3`，nums第一個值為false等於0，故不執行if判斷，所以只執行三次，count為3
+
 </p>
 </details>
 
 ---
 
-### Front end Q95: 輸出為何?
+### Front end Q93: 輸出為何?
 ```javascript
 const user = {
   email: "e@mail.com",
@@ -2329,15 +2341,15 @@ console.log(updateUser === user)
 ```
 <details><summary><b>A</b></summary>
 <p>
-true
 
-updateUser回傳值為user，updateUser === user = true
+`true`，updateUser回傳值為user，updateUser === user = true
+
 </p>
 </details>
 
 ---
 
-### Front end Q96: 輸出為何?
+### Front end Q94: 輸出為何?
 ```javascript
 const fruit = ['🍌', '🍊', '🍎']
 
@@ -2347,7 +2359,8 @@ fruit.unshift('🍇')
 ```
 <details><summary><b>A</b></summary>
 <p>
-['🍇', '🍊', '🍎']
+
+`['🍇', '🍊', '🍎']`
 
 slice: slice會複製一個新陣列，不會改變原始陣列 = ['🍌']
 
