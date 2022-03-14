@@ -6,6 +6,11 @@
 **Steps**
 1. `HTML` => `DOM Tree`
 2. `CSS` ⇒ `CSSOM Tree`
+`※在瀏覽器解析HTML產生DOM Tree的時候和解析CSS產生CSS Tree的時候是各自獨立的`
+`※而如果在HTML解析到script標籤則會停止DOM Tree解析開始下載js，因為在js中有可能會改變HTML結構(動態)`
+`※CSS是逆向解析的(由右到左)，應該避免多層嵌套(最好維持在最多三層)、多用指定選擇器(如class)而不是通用選擇器(如*)、盡量少去指定標籤(改用class)`
+
+
 3. `DOM Tree and CSSOM Tree` ⇒ `Render Tree`
 4. `Render Tree` ⇒ `Layout`
 5. `Paint Browser`
@@ -28,8 +33,9 @@ example: `http://www.example.com:80/path/to/myPage?key=value1&key2=value2#someDo
 
 
 **輸入網址到渲染畫面的過程**
+`輸入網址 > DNS解析 > TCP連接 > HTTP請求 > HTTP回傳請求內容`
 1. `瀏覽器透過作業系統去找IP網址`
-2. `去DNS(查找伺服器)找相對應的IP Address`
+2. `去DNS(查找伺服器: 域名解析系統)找相對應的IP Address`
 3. `把IP Address丟回Browser`
 
 
@@ -40,9 +46,9 @@ example: `http://www.example.com:80/path/to/myPage?key=value1&key2=value2#someDo
 5. `TCP協議`: 彼此都會有接收和發送功能，三次握手確認彼此功能正常。
 
 **三次握手**
-1. `你有收到嗎?`
-2. `我有收到?你有收到嗎?`
-3. `我也有收到`
+1. `瀏覽器發起說我要發送請求了`
+2. `服務端說我準備接受請求`
+3. `瀏覽器發送請求`
 
 **TCP/IP四層模型(由上到下)**
 1. `應用層(Application)`: HTTP、FTP，以上兩個應用層都是使用TCP傳輸模式。
@@ -52,6 +58,16 @@ example: `http://www.example.com:80/path/to/myPage?key=value1&key2=value2#someDo
 </p>
 
 ---
+
+### 優化渲染
+<p>
+
+1. 減少HTTP請求
+2. 減少直接操作DOM
+3. CSS的寫法(逆向解析)、嵌套層級(至多三層)、指定選擇器(class、id，且不與標籤重疊，如ul#list)、減少標籤選擇器或是通用選擇器(li、*)
+4. 圖片壓縮
+
+</p>
 
 ### Clourse
 ```javascript
