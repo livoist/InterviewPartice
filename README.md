@@ -1,5 +1,41 @@
 # JavaScript Interview Partice
 
+### Vue lifeCircle compare
+<p>
+
+***Vue2(option)***
+1. beforeCreate: 實體被建立，但狀態和市件都未初始化
+2. created: 實體已建立，初始化完成(prop、data、watch、computed、methods)都已建立
+3. beforeMount: 實體未與模板綁定
+4. mounted: 實體掛載完成，el => $el
+5. beforeUpdate: 狀態變化後，視圖未更新前
+6. update: 狀態變化後，視圖更新後(但不一定全部更新完成，如果要確定得用nextTick)
+7. beforeDestroy: 實體被銷毀前
+8. beforeUnmount: 實體被銷毀前
+9. destroyed: 實體被銷毀完畢
+10. unmounted: 實體被銷毀完畢
+11. errorCaptured: 子元件錯誤被捕捉到觸發
+12. activated: 元件被啟動時觸發，搭配keep-alive使用
+13. deactivated: 元件被解除時觸發，搭配keep-alive使用
+</p>
+
+<p>
+
+***Vue3(composition)***
+1. setup(beforeCreate、created): 實體已建立，初始化完成(prop、data、watch、computed、methods)都已建立
+2. onBeforeMount: 實體未與模板綁定
+3. onMounted: 實體掛載完成，el => $el
+4. onBeforeUpdate: 狀態變化後，視圖未更新前
+5. onUpdated: 狀態變化後，視圖更新後(但不一定全部更新完成，如果要確定得用nextTick)
+6. onBeforeUnmount(beforeDestroy、beforeUnmount): 實體被銷毀前
+7. onUnmounted(destroyed、unmounted): 實體被銷毀完畢
+8. errorCaptured: 子元件錯誤被捕捉到觸發
+9. activated: 元件被啟動時觸發，搭配keep-alive使用
+10. deactivated: 元件被解除時觸發，搭配keep-alive使用
+</p>
+
+---
+
 ### Web Render Step
 <p>
 
