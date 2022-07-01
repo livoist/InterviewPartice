@@ -4,7 +4,7 @@
 <p>
 
 ***Vue2(option)***
-1. beforeCreate: 實體被建立，但狀態和市件都未初始化
+1. beforeCreate: 實體被建立，但狀態和事件都未初始化
 2. created: 實體已建立，初始化完成(prop、data、watch、computed、methods)都已建立
 3. beforeMount: 實體未與模板綁定
 4. mounted: 實體掛載完成，el => $el
