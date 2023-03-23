@@ -49,7 +49,9 @@
 7. `Display` - Brower Process: Reflow Step、Repaint Step、Composition
 
 `# Reflow 回流: 指的是瀏覽器為了重新渲染部分或全部的 document 而重新計算 Render Tree 中元素的物理屬性，如位置、大小的過程(height、width、margin、排列方式)。`
+
 `# Repaint 重繪: 將計算結果轉為實際的像素，畫到畫面上。如果只改動元素的顏色、背景圖等不需要重新計算頁面元素 layout 的樣式，就只會從 Repaint 開始觸發，跳過 Reflow 的步驟，最後再到合成階段。`
+
 `# Composition 組合: 合成frame，例如動畫常使用的transform`
 
 `※在瀏覽器解析HTML產生DOM Tree的時候和解析CSS產生CSS Tree的時候是各自獨立的`
