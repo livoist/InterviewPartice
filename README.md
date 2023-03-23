@@ -40,16 +40,21 @@
 <p>
 
 **Steps**
-1. `HTML` => `DOM Tree`
-2. `CSS` ⇒ `CSSOM Tree`
+1. `HTML` => `DOM Tree`、`CSS` => `CSSOM Tree` - Main Thread(Renderer Process)
+2. `Render Tree` - Main Thread(Renderer Process)
+3. `Layout` - Main Thread(Renderer Process): Reflow Step
+4. `Layer` - Main Thread(Renderer Process): Reflow Step
+5. `Paint Browser` - Main Thread(Renderer Process): Reflow Step、Repaint Step
+6. `Compositing` - Compositor Thread & Raster Thread(Renderer Process): 組合柵格化(rasterize)後的圖層(frame): Reflow Step、Repaint Step、Composition
+7. `Display` - Brower Process: Reflow Step、Repaint Step、Composition
+
+`# Reflow 回流: 指的是瀏覽器為了重新渲染部分或全部的 document 而重新計算 Render Tree 中元素的物理屬性，如位置、大小的過程(height、width、margin、排列方式)。`
+`# Repaint 重繪: 將計算結果轉為實際的像素，畫到畫面上。如果只改動元素的顏色、背景圖等不需要重新計算頁面元素 layout 的樣式，就只會從 Repaint 開始觸發，跳過 Reflow 的步驟，最後再到合成階段。`
+`# Composition 組合: 合成frame，例如動畫常使用的transform`
+
 `※在瀏覽器解析HTML產生DOM Tree的時候和解析CSS產生CSS Tree的時候是各自獨立的`
 `※而如果在HTML解析到script標籤則會停止DOM Tree解析開始下載js，因為在js中有可能會改變HTML結構(動態)`
 `※CSS是逆向解析的(由右到左)，應該避免多層嵌套(最好維持在最多三層)、多用指定選擇器(如class)而不是通用選擇器(如*)、盡量少去指定標籤(改用class)`
-
-
-3. `DOM Tree and CSSOM Tree` ⇒ `Render Tree`
-4. `Render Tree` ⇒ `Layout`
-5. `Paint Browser`
 
 </p>
 
@@ -100,8 +105,66 @@ example: `http://www.example.com:80/path/to/myPage?key=value1&key2=value2#someDo
 
 1. 減少HTTP請求
 2. 減少直接操作DOM
-3. CSS的寫法(逆向解析)、嵌套層級(至多三層)、指定選擇器(class、id，且不與標籤重疊，如ul#list)、減少標籤選擇器或是通用選擇器(li、*)
-4. 圖片壓縮
+3. CSS的寫法(CSS是逆向解析)、嵌套層級(至多三層)、指定選擇器(class、id，且不與標籤重疊，如ul#list)、減少標籤選擇器或是通用選擇器(li、*，成本昂貴)、div > p、div p，前者只會查找一層，後者則會每層都找、transition，如果明確知道要transition的對象就直接指定對象，例如transition: target 0.3s ease而不是transition: all 0.3s ease。
+4. 減少CSS的Reflow，改變元素的margin、padding、width、height、position的left and top、font size、font family、window size。
+5. will-change: opacity、transform(提前告知瀏覽器未來會做的行為，讓瀏覽器先做準備，如果是頻繁觸發的可以使用，但如果不是建議用完移除該屬性，不然成本非常高)。
+```CSS
+* {
+  will-change: transform;
+}
+```
+6. 動態載入模組(Dynamic Import)。
+7. 使用第三方套件注意有沒有支援Tree shaking。
+8. Debounce & Throttle、Rx.js，減少對Server的請求次數(指定時間到才能觸發)
+9. export的模組保持原子性。
+```javascript
+// bad case
+export default {
+  func1,
+  func2,
+  func3
+}
+
+// best case
+export function add(num) {
+  return num + 100
+}
+
+export const minus = (num) => {
+  return 100 - num
+}
+
+export const nums = [1, 2, 3, 4, 5]
+```
+
+10. 圖片壓縮(JPG: 有損壓縮，壓縮過後的JPG檔案都會比PNG小，採用失真壓縮演算法，結果不可逆，PNG: 無損壓縮，採用無失真演算法，結果較好，失真較低)。
+11. 圖片的DPR(Device Pixel Ratio): 螢幕像素與 CSS pixel 之間轉換的倍率值，並且善用picture、source tag(由上而下解讀)。
+```HTML
+<p>
+  img(srcset、size)、picture與media query的差異
+  1. CSS Media Query: 在media query的條件下必須將所有的圖片都先載下來，勢必會發更多的request
+  2. img、picture(srcset、size、media、source): 而使用img、picture的狀況下則是將選擇權給brower，由現在的條件去載入相對應的圖片，減少必須一次全部取得而必須發過多的request
+</p>
+
+<picture>
+  <source
+    media="(min-width: 1920px)"
+    srcset="test.webp"
+    type="image/webp"
+  />
+  <source
+    media="(min-width: 1920px)"
+    srcset="test.jpeg"
+    type="image/jpeg"
+  />
+  <source
+    media="(max-width: 500px)"
+    srcset="test.png"
+    type="image/webp"
+  />
+  <img src="default.jpg" alt="default" />
+</picture>
+```
 
 </p>
 
